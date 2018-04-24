@@ -1,0 +1,52 @@
+<!--Pour la liste il faudra se servir du systeme avec nom prenom en liste pour 
+    l'afficher et leur donner un id a chacun et un attribut "fait ou non" 
+    qui sera trigger par la checkbox je suppose. On utilise un ID pour chacun
+    en mode sale qui s'incremente a chaque tâche. ça permettrait de choisir quoi
+    barrer/supprimer.
+    Pour barrer on change le style en barré.-->
+ <!--   <br />
+Page 6
+<br />
+<br />
+<div ng-repeat="ts in taskSet">
+    <span ng-bind="ts.id"></span> <span ng-bind="ts.taskName"></span>
+</div> -->
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Page 6</h1>
+    </div>
+</div>
+<br/>
+<br/>
+<div class="container">
+    <form role="form" ng-submit="addTask()">
+        <div class="form-group row">
+            <input type="text" ng-model="taskName" placeholder="Tâche" class="col-md-9 form-control"/>
+            <input type="submit" value="Ajouter" class="col-md-3 form-control btn btn-primary" />
+        </div>
+    </form>
+
+    <br/>
+    <br/>
+    <h3 class="display-5">Nombre d'item {{nbItem}}</h3> <!--var mêem pas init donc fait rien-->
+
+
+    <div class="list-group">
+        <div ng-repeat="dt in taskSet" ng-class="{barre : dt.done}" > <!-- si dt.done est true on donne le nom de classe barre à l'element-->
+            <input type="checkbox"  ng-model="dt.done" ng-click="updateTask(dt)"> <!-- avec le ng-model l'etat de la checkbox transcrit true ou false de task.done-->
+            <span ng-bind="dt.taskName"></span>-<span ng-bind="dt.done"></span> <input type="button" value="X" ng-click="removeTask(dt)"></br>
+        </div>
+    </div>
+    le refresh visuel bug, mais ça supprime bien de la liste cote serveur
+    probleme de refresh qui ne fonctionne pas en gros
+
+    -> du a un non appel de la fonction call back dans le todo service parti supprimer
+
+
+
+</div>
+
+
+
+

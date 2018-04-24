@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="routeApp">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Route App</title>
+
+    </head>
+
+    <body>
+        
+        <script src="js/assets/angular.min.js" ></script>
+        <script src="js/assets/angular-ui-router.min.js" ></script>
+
+        <script src="js/assets/boostrap.min.js" ></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--permet de donner un style à des données html en leur donnant une classe spécifique, chercher sur internet pour les trouver -->
+        <script src="js/routing.js" ></script>
+        <script src="js/Page1Ctrl.js" ></script>
+        <script src="js/Page2Ctrl.js" ></script>
+        <script src="js/Page3Ctrl.js" ></script>
+        <script src="js/Page4Ctrl.js" ></script>
+        <script src="js/Page5Ctrl.js" ></script>
+        <script src="js/ComputeService.js" ></script>
+        <script src="js/Page6Ctrl.js"></script>
+        <script src="js/todoService.js"></script>
+
+        
+
+        <a ui-sref="page1"
+        ui-sref-active="active">Page1</a>
+        <a ui-sref="page2"
+        ui-sref-active="active">Page2</a>
+        <a ui-sref="page3"
+        ui-sref-active="active">Page3</a>
+        <a ui-sref="page4"
+        ui-sref-active="active">Page4</a>
+        <a ui-sref="page5"
+        ui-sref-active="active">Page5</a>
+        <a ui-sref="page6"
+        ui-sref-active="active">Page6</a>
+        <!-- ça pop toujours entre les balises ui-view-->
+        <ui-view></ui-view>
+
+    </body>
+</html>
+
+
